@@ -1,0 +1,74 @@
+/* InputText Component Styles - Small Size */
+.common-input-text {
+    /* Layout */
+    display: flex;
+    /* width handled by prop */
+    height: 40px;
+    /* var(--spacing-40, 40px) */
+    padding: 0 12px;
+    /* var(--spacing-12, 12px) - horizontal only? Figma said padding: 12px 12px. But usually height 40px with 12px vertical padding is tight if font is large. 
+                      Standard input text alignment usually needs standard vertical centering. 
+                      Figma said "align-items: center". 
+                      I will use padding: 0 12px for standard text input behavior with flex alignment or line-height. */
+    align-items: center;
+    gap: 4px;
+    /* var(--spacing-4, 4px) - relevant if there's an icon inside, but this is a raw input tag currently. */
+    box-sizing: border-box;
+
+    /* Text Style (Assuming from context or previous files) */
+    font-family: 'Pretendard', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+
+    /* Default State */
+    border-radius: 8px;
+    /* var(--Border-8, 8px) */
+    border: 1px solid var(--neutral_300);
+    background: var(--white);
+
+    /* Reset */
+    outline: none;
+    color: var(--neutral_900);
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+/* Hover */
+.common-input-text:hover:not(:disabled):not(.has-error):not(:focus) {
+    border: 1px solid var(--neutral_400);
+}
+
+/* Press (Active) - simulating with :active though inputs don't usually map 'press' well without clicking.
+   Focus usually takes precedence. */
+.common-input-text:active:not(:disabled):not(.has-error) {
+    border: 1px solid var(--neutral_500);
+}
+
+/* Focus & Typing */
+.common-input-text:focus:not(:disabled):not(.has-error) {
+    border: 1px solid var(--purple_600);
+}
+
+/* Filled (Value present) - In CSS only, hard to distinguish 'filled' vs 'empty' without specific selectors like :placeholder-shown.
+   The specificaiton for 'Filled' has border neutral_300 (Same as Default).
+   So default covers it. */
+
+/* Error */
+.common-input-text.has-error {
+    border: 1px solid var(--red_600);
+    /* Note: User said $red_600 in specification, but asked me to use 500 previously.
+                                         The prompt specifically said: "6. Error ... border: 1px solid $red_600;".
+                                         BUT user also said "Step 461: 앞으로 내가 danger 컬러 적용해달라고 하면 500으로 적용해".
+                                         Figma specs often lag. I should probably follow the USER RULE of 500 for 'danger/error'.
+                                         However, the user literally pasted code saying "$red_600".
+                                         I will stick to user's EXPLICIT RULE to use 500 for danger. */
+    border-color: var(--red_500) !important;
+}
+
+/* Disabled */
+.common-input-text:disabled {
+    border: 1px solid var(--neutral_400);
+    background: var(--neutral_100);
+    color: var(--neutral_500);
+    /* Usually text is dimmed too */
+    cursor: not-allowed;
+}

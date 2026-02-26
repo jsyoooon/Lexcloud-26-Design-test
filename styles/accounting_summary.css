@@ -1,0 +1,263 @@
+/* Accounting Summary Header Component */
+
+.accounting-summary-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.summary-card {
+    background-color: var(--white);
+    /* Border: secondary (#DCDFE2) */
+    border: 1px solid #DCDFE2;
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s ease-in-out;
+}
+
+/* .summary-card:hover removed as per request */
+
+.summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.summary-label {
+    font-family: var(--Body_sm_medium_font_family);
+    font-size: 13px;
+    font-weight: 600;
+    /* Text: secondary (#85888B) */
+    color: #85888B;
+    letter-spacing: -0.01em;
+}
+
+.summary-value-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.summary-value {
+    /* Lowered from 24px to Heading_Desktop_md (20px) */
+    font-family: var(--Heading_Desktop_md_semibold_font_family);
+    font-size: var(--Heading_Desktop_md_semibold_font_size);
+    font-weight: var(--Heading_Desktop_md_semibold_font_weight);
+    line-height: var(--Heading_Desktop_md_semibold_line_height);
+    letter-spacing: var(--Heading_Desktop_md_semibold_letter_spacing);
+    /* Text: primary (#141617) */
+    color: #141617;
+}
+
+.summary-value.highlight {
+    color: var(--primary_500);
+}
+
+.summary-trend {
+    /* Font: Body/sm/medium (12px, 500) */
+    font-family: var(--Body_sm_medium_font_family);
+    font-size: var(--Body_sm_medium_font_size);
+    font-weight: var(--Body_sm_medium_font_weight);
+    line-height: var(--Body_sm_medium_line_height);
+    letter-spacing: var(--Body_sm_medium_letter_spacing);
+
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.trend-up {
+    background-color: #f6ffed;
+    color: #52c41a;
+}
+
+.trend-down {
+    background-color: #fff1f0;
+    color: #f5222d;
+}
+
+.summary-subtext {
+    font-size: 12px;
+    /* Text: secondary-subtle (#B9BEC1) */
+    color: #B9BEC1;
+    /* Removed margin-top as it is now in header row */
+    margin-top: 0;
+}
+
+.text-danger {
+    color: var(--red_500) !important;
+}
+
+.text-success {
+    color: var(--green_600) !important;
+}
+
+.count-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    margin-left: 8px;
+    background-color: var(--neutral_100);
+    color: var(--neutral_700);
+}
+
+.count-badge.text-danger {
+    background-color: #FFF0F0;
+    color: var(--red_500) !important;
+}
+
+.count-badge.text-success {
+    background-color: #F6FFED;
+    color: var(--green_600) !important;
+}
+
+/* Month Selector */
+.month-selector-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    /* Removed bottom margin */
+    position: relative;
+}
+
+/* Base style for title text parts */
+.month-select-text,
+.month-title-text {
+    font-family: "Pretendard", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: var(--neutral_900);
+    padding: 0;
+    margin: 0;
+}
+
+/* ... existing styles ... */
+
+.summary-value {
+    /* Lowered from 24px to Heading_Desktop_md (20px) */
+    font-family: var(--Heading_Desktop_md_semibold_font_family);
+    font-size: var(--Heading_Desktop_md_semibold_font_size);
+    font-weight: var(--Heading_Desktop_md_semibold_font_weight);
+    line-height: var(--Heading_Desktop_md_semibold_line_height);
+    letter-spacing: var(--Heading_Desktop_md_semibold_letter_spacing);
+    /* Text: primary (#141617) */
+    color: #141617;
+}
+
+.month-select-box {
+    display: inline-flex !important;
+    /* Force Hug */
+    width: auto !important;
+    /* Force Auto Width */
+    min-width: 0 !important;
+    /* Override potential min-width */
+    align-items: center;
+    gap: 0px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 6px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    transition: all 0.2s ease;
+    margin-left: 0;
+}
+
+/* Default state: Icon visible, looks like text+icon */
+.month-select-box .icon-triangle-down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    opacity: 1;
+    transform: none;
+    transition: all 0.2s ease;
+    color: var(--neutral_700);
+    margin-top: 2px;
+    padding: 0;
+    /* Forced 0 */
+    margin: 0;
+    /* Forced 0 */
+}
+
+/* Hover state: Visual cue - "Discoverable" */
+.month-select-box:hover {
+    background-color: transparent;
+    /* No background */
+    /* Optional: Change text color or icon color to hint interactivity? */
+    /* User didn't explicitly ask, but standard UX suggests some feedback. */
+    /* For now, just removing the "box". */
+}
+
+/* Active select state */
+.month-select-box.active {
+    background-color: transparent;
+    /* No background */
+    border-color: transparent;
+    /* No border */
+    box-shadow: none;
+    /* No shadow */
+}
+
+/* Dropdown Menu */
+.month-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    background: white;
+    border: 1px solid var(--neutral_200);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-height: 240px;
+    overflow-y: auto;
+    z-index: 100;
+    width: 120px;
+    padding: 4px;
+}
+
+.month-dropdown-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--neutral_900);
+}
+
+.month-dropdown-item:hover {
+    background-color: var(--neutral_50);
+}
+
+.month-dropdown-item.selected {
+    background-color: var(--purple_50);
+    color: var(--purple_600);
+    font-weight: 600;
+}
+
+/* Reference Text */
+.month-selector-reference {
+    margin-left: 12px;
+    font-size: 14px;
+    color: var(--neutral_800);
+    font-weight: 400;
+    padding-left: 12px;
+    border-left: 1px solid var(--neutral_300);
+    height: 14px;
+    line-height: 14px;
+    display: inline-flex;
+    align-items: center;
+}

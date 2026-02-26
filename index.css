@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: rgb(var(--brand-600));
+  --color-secondary: rgb(var(--blue-600));
+  --color-background: rgb(var(--neutral-50));
+  --color-surface: rgb(var(--white));
+  --color-text: rgb(var(--neutral-900));
+  --color-border: rgb(var(--neutral-200));
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom Icon System Styles */
+.custom-icon svg {
+  width: 100%;
+  height: 100%;
+  /* Force currentColor for fill/stroke if strictly needed, 
+     but usually we want the SVG's internal properties OR inherited color 
+     if fill="currentColor" is present in SVG. */
+  /* If user requested "currentColor based usage", we rely on SVG having fill="currentColor" */
+}
