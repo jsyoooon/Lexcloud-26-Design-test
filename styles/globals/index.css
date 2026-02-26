@@ -1,0 +1,13 @@
+/* 전역 스타일 통합 파일 */
+
+/* 디자인 토큰 (Colors, Spacing, Typography vars) */
+@import './design-tokens.css';
+
+/* 기본 스타일 (Reset, Base elements, Typography classes) */
+@import './base.css';
+
+/* 유틸리티 스타일 */
+@import './utilities.css';
+
+/* 컴포넌트 스타일 */
+@import '../components/index.css';

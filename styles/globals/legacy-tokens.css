@@ -1,0 +1,166 @@
+:root {
+    /* Color Mapping */
+    /* Primitive Colors - Channel based, need rgb() wrapper */
+    /* Fixed White Definition */
+    --base_white: #ffffff;
+    --white: #ffffff;
+    --White: #ffffff;
+
+    --neutral_50: rgb(var(--neutral-50));
+    --neutral_100: rgb(var(--neutral-100));
+    --neutral_200: rgb(var(--neutral-200));
+    --neutral_300: rgb(var(--neutral-300));
+    --neutral_400: rgb(var(--neutral-400));
+    --neutral_500: rgb(var(--neutral-500));
+    --neutral_600: rgb(var(--neutral-600));
+    --neutral_700: rgb(var(--neutral-700));
+    --neutral_800: rgb(var(--neutral-800));
+    --neutral_900: rgb(var(--neutral-900));
+
+    --purple_50: rgb(var(--brand-50));
+    --purple_100: rgb(var(--brand-100));
+    --purple_200: rgb(var(--brand-200));
+    --purple_600: rgb(var(--brand-600));
+    --purple_800: rgb(var(--brand-800));
+
+    --red_50: rgb(var(--red-50));
+    --red_100: rgb(var(--red-100));
+    --red_500: rgb(var(--red-500));
+    --red_600: rgb(var(--red-600));
+
+    --green_500: rgb(var(--green-500));
+    --green_700: rgb(var(--green-700));
+
+    --yellow_50: rgb(var(--yellow-50));
+    --yellow_100: rgb(var(--yellow-100));
+    --yellow_500: rgb(var(--yellow-500));
+
+    /* Legacy Color Names */
+    --Color_Base_Black: rgb(var(--black));
+    --Color_Bg_dimmed: rgba(53, 62, 69, 0.7);
+    /* Approximate, using rgba with absolute values */
+    --Color_Danger_500: rgb(var(--red-500));
+    --Color_Neutral_300: rgb(var(--neutral-300));
+    --Color_Neutral_500: rgb(var(--neutral-500));
+    --Color_Neutral_700: rgb(var(--neutral-700));
+
+    --Color_Secondary_50: rgb(var(--blue-50));
+    --Color_Secondary_100: rgb(var(--blue-100));
+    --Color_Secondary_200: rgb(var(--blue-200));
+    --Color_Secondary_300: rgb(var(--blue-300));
+    --Color_Secondary_400: rgb(var(--blue-400));
+    --Color_Secondary_600: rgb(var(--blue-600));
+    --Color_Secondary_700: rgb(var(--blue-700));
+    --Color_Secondary_800: rgb(var(--blue-800));
+
+    --Color_Success_500: rgb(var(--green-500));
+    --Color_Success_600: rgb(var(--green-600));
+
+    --Gray-300: rgb(var(--neutral-300));
+    --Gray-400: rgb(var(--neutral-400));
+    --Gray_Primary: rgb(var(--neutral-900));
+
+    /* Text colors are also defined as channels in design-tokens.css */
+    --Gray_Primary_text: rgb(var(--text-primary));
+    --Gray_Secondary_text: rgb(var(--text-secondary));
+    --Gray_Sub_button: rgb(var(--neutral-400));
+
+    --Primary: rgb(var(--brand-600));
+    --Primary_70: rgb(var(--brand-400));
+
+    /* Status Colors are defined as Hex in design-tokens.css, so no rgb() wrapper needed, BUT they are variables */
+    /* Re-defining them here as they were in design-tokens.css for consistency, or linking if they were vars */
+    /* design-tokens.css has --status-01: #ffd01d; so we can just use var() */
+    --Status_01: var(--status-01);
+    --Status_01-Subtle: var(--status-01-subtle);
+    --Status_02: var(--status-02);
+    --Status_03: var(--status-03);
+    --Status_03-Subtle: var(--status-03-subtle);
+    --Status_04: var(--status-04);
+    --Status_05: var(--status-05);
+    --Status_05-Subtle: var(--status-05-subtle);
+    --Status_06: var(--status-06);
+    --Status_06-Subtle: var(--status-06-subtle);
+    --Status_07: var(--status-07);
+    --Status_07-Subtle: var(--status-07-subtle);
+    --Status_08: var(--status-08);
+    --Status_08-Subtle: var(--status-08-subtle);
+    --Status_09: var(--status-09);
+    --Status_09-Subtle: var(--status-09-subtle);
+    --Status_10-Subtle: var(--status-10-subtle);
+
+    --color_text_interactive_inverse: rgb(var(--white));
+
+    /* Typography Mapping */
+    /* Typography variables are just values (px, weight etc), not colors, so they are fine */
+
+    /* Body md (14px) */
+    --Body_md_medium_font_family: var(--font-family-primary);
+    --Body_md_medium_font_style: normal;
+    --Body_md_medium_font_weight: var(--font-weight-medium);
+    --Body_md_medium_font_size: var(--font-size-sm);
+    --Body_md_medium_line_height: var(--line-height-normal);
+    --Body_md_medium_letter_spacing: -0.02em;
+
+    --Body_md_semibold_font_family: var(--font-family-primary);
+    --Body_md_semibold_font_style: normal;
+    --Body_md_semibold_font_weight: var(--font-weight-semibold);
+    --Body_md_semibold_font_size: var(--font-size-sm);
+    --Body_md_semibold_line_height: var(--line-height-normal);
+    --Body_md_semibold_letter_spacing: -0.02em;
+
+    /* Body sm (12px) */
+    --Body_sm_medium_font_family: var(--font-family-primary);
+    --Body_sm_medium_font_style: normal;
+    --Body_sm_medium_font_weight: var(--font-weight-medium);
+    --Body_sm_medium_font_size: var(--font-size-xs);
+    --Body_sm_medium_line_height: var(--line-height-normal);
+    --Body_sm_medium_letter_spacing: -0.02em;
+
+    --Body_sm_regular_font_family: var(--font-family-primary);
+    --Body_sm_regular_font_style: normal;
+    --Body_sm_regular_font_weight: var(--font-weight-normal);
+    --Body_sm_regular_font_size: var(--font-size-xs);
+    --Body_sm_regular_line_height: var(--line-height-normal);
+    --Body_sm_regular_letter_spacing: -0.02em;
+
+    /* Body lg (16px) */
+    --Body_lg_medium_font_family: var(--font-family-primary);
+    --Body_lg_medium_font_style: normal;
+    --Body_lg_medium_font_weight: var(--font-weight-medium);
+    --Body_lg_medium_font_size: var(--font-size-base);
+    --Body_lg_medium_line_height: var(--line-height-normal);
+    --Body_lg_medium_letter_spacing: -0.02em;
+
+    --Body_lg_semibold_font_family: var(--font-family-primary);
+    --Body_lg_semibold_font_style: normal;
+    --Body_lg_semibold_font_weight: var(--font-weight-semibold);
+    --Body_lg_semibold_font_size: var(--font-size-base);
+    --Body_lg_semibold_line_height: var(--line-height-normal);
+    --Body_lg_semibold_letter_spacing: -0.02em;
+
+    /* Headings */
+    --Heading_Desktop_xl_bold_font_family: var(--font-family-primary);
+    --Heading_Desktop_xl_bold_font_style: normal;
+    --Heading_Desktop_xl_bold_font_weight: var(--font-weight-bold);
+    --Heading_Desktop_xl_bold_font_size: var(--font-size-2-5xl, 1.75rem);
+    /* 28px */
+    --Heading_Desktop_xl_bold_line_height: var(--line-height-normal);
+    --Heading_Desktop_xl_bold_letter_spacing: -0.02em;
+
+    --Heading_Desktop_md_semibold_font_family: var(--font-family-primary);
+    --Heading_Desktop_md_semibold_font_style: normal;
+    --Heading_Desktop_md_semibold_font_weight: var(--font-weight-semibold);
+    --Heading_Desktop_md_semibold_font_size: var(--font-size-xl);
+    /* 20px */
+    --Heading_Desktop_md_semibold_line_height: var(--line-height-normal);
+    --Heading_Desktop_md_semibold_letter_spacing: -0.02em;
+
+    /* Navigation Variables */
+    --nav_width_expanded: 240px;
+    --nav_width_collapsed: 68px;
+    --nav_item_height: 40px;
+    --nav_item_gap: 2px;
+    --nav_padding_x: 12px;
+    --nav_icon_size: 20px;
+}
